@@ -191,5 +191,83 @@ for each lexeme we need to identify a token class. A pair of <token class, lexem
 
 
 
+## Lexture 2: Lexical Analysis Examples
+
+1. Fortran whitespace is not sigificant.
+   DO 5 I example requires lookahead 
+
+   A goal is to reduce the number of look-aheads
+
+   The whitespace rule for Fortran came from punchcards. It was easy to add white space.
+
+
+   LookAhead is always needed, just want to minimize it as much as possiable.
+
+
+2. PL/1 keywords are not reserved
+
+    LA was challenging.
+
+
+4. C++ Texplate syntax:
+       Foo<Bar>
+
+   C++ stream syntax:
+
+       cin >> var;
+
+       Foo<Bar<Baz>> <-- looks like the stream syntax 
+
+The goal of lexical analysis ts to 
+  1. PArtition the input string into lexemes
+  2. Identify the token of each lexeme
+
+  Because we are using left-to-right parsing, we have to use look-ahead, to determine the role the string plays.
+
+## Lecture 3: Regular Languages
+
+Need a way it say what set of strings is in a token class
+   we use Regular languages. We use Regular Expressions for this.
+
+   * Single character
+
+      'c' = { "c" }
+
+   * Epsion
+
+      E = {""}
+      this is not null.
+
+   * Union
+
+       A + B = { A | a in A} u { B | b in B }
+
+   * Concatenation 
+
+       AB = { ab | a in A ^ b in B }
+
+   * Iteration
+
+      A* U(i>= 0) A^i 
+
+      A^0 = Epsion
+
+
+### Examples
+
+
+E = { 0,1}
+
+When you have a regular expersion that represents all strings in the language it's called Sigma star.
+
+### Quiz
+
+
+
+    
+
+
+
+
 
 
